@@ -91,3 +91,35 @@ export const suppliers = [
   'Central Book House',
   'Magazine World',
 ];
+
+export const shopNames = [
+  'Ram Store',
+  'Vedivel Store',
+  'Murali Store',
+  'Subash Store',
+  'Padmanaban Store',
+  'Santhosh Store',
+];
+
+// Outward entries sent to shops (for linking with returns)
+export interface OutwardToShop {
+  id: string;
+  date: string;
+  shopName: string;
+  bookName: string;
+  quantity: number;
+  rate: number;
+  amount: number;
+  returnedQty: number;
+}
+
+export const outwardToShops: OutwardToShop[] = [
+  { id: '1', date: '2025-11-25', shopName: 'Ram Store', bookName: 'Ananda Vikatan', quantity: 20, rate: 40, amount: 800, returnedQty: 8 },
+  { id: '2', date: '2025-11-25', shopName: 'Ram Store', bookName: 'Junior Vikatan', quantity: 15, rate: 30, amount: 450, returnedQty: 0 },
+  { id: '3', date: '2025-11-26', shopName: 'Vedivel Store', bookName: 'Aval Vikatan', quantity: 25, rate: 40, amount: 1000, returnedQty: 15 },
+  { id: '4', date: '2025-11-26', shopName: 'Vedivel Store', bookName: 'Kungumam', quantity: 18, rate: 35, amount: 630, returnedQty: 0 },
+  { id: '5', date: '2025-11-27', shopName: 'Murali Store', bookName: 'Junior Vikatan', quantity: 20, rate: 30, amount: 600, returnedQty: 10 },
+  { id: '6', date: '2025-11-27', shopName: 'Murali Store', bookName: 'Bakathi', quantity: 15, rate: 50, amount: 750, returnedQty: 0 },
+  { id: '7', date: '2025-11-28', shopName: 'Subash Store', bookName: 'Kungumam', quantity: 12, rate: 35, amount: 420, returnedQty: 5 },
+  { id: '8', date: '2025-11-29', shopName: 'Santhosh Store', bookName: 'Bakathi', quantity: 20, rate: 50, amount: 1000, returnedQty: 12 },
+];
