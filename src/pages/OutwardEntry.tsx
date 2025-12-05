@@ -31,23 +31,13 @@ import {
 import { CalendarIcon, FileText, Download, Printer, ArrowUpFromLine } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
-import { bookNames, booksList } from "@/data/bookData";
+import { bookNames, booksList, shopNames } from "@/data/bookData";
 import { toast } from "@/hooks/use-toast";
 
 const todayOutward = [
-  { id: "1", bookName: "Ananda Vikatan", quantity: 5, customer: "Ram Store", amount: 200 },
-  { id: "2", bookName: "Junior Vikatan", quantity: 8, customer: "Vedivel Store", amount: 240 },
-  { id: "3", bookName: "Kungumam", quantity: 4, customer: "Murali Store", amount: 140 },
-];
-
-const customers = [
-  "Ram Store",
-  "Vedivel Store",
-  "Murali Store",
-  "Subash Store",
-  "Padmanaban Store",
-  "Santhosh Store",
-  "Walk-in Customer",
+  { id: "1", bookName: "Ananda Vikatan", quantity: 5, shopName: "Ram Store", amount: 200 },
+  { id: "2", bookName: "Junior Vikatan", quantity: 8, shopName: "Vedivel Store", amount: 240 },
+  { id: "3", bookName: "Kungumam", quantity: 4, shopName: "Murali Store", amount: 140 },
 ];
 
 const OutwardEntry = () => {
@@ -165,17 +155,17 @@ const OutwardEntry = () => {
                 />
               </div>
 
-              {/* Customer */}
+              {/* Shop Name */}
               <div className="space-y-2">
-                <Label htmlFor="customer">Customer / Store Name *</Label>
+                <Label htmlFor="shopName">Shop Name *</Label>
                 <Select value={customerName} onValueChange={setCustomerName}>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select customer" />
+                    <SelectValue placeholder="Select shop" />
                   </SelectTrigger>
                   <SelectContent className="bg-popover">
-                    {customers.map((customer) => (
-                      <SelectItem key={customer} value={customer}>
-                        {customer}
+                    {shopNames.map((shop) => (
+                      <SelectItem key={shop} value={shop}>
+                        {shop}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -257,7 +247,7 @@ const OutwardEntry = () => {
                     <TableCell>
                       <div>
                         <p className="font-medium">{entry.bookName}</p>
-                        <p className="text-xs text-muted-foreground">{entry.customer}</p>
+                        <p className="text-xs text-muted-foreground">{entry.shopName}</p>
                       </div>
                     </TableCell>
                     <TableCell className="text-right">
